@@ -1,7 +1,11 @@
 import React from "react";
 
 function Contacts(){
-    return <div>Contacts</div>
+    return (
+        <div className='pageWrapper'>
+            <div className='contentWrapper'>Content</div>
+        </div>
+    )
 }
 
 export default Contacts;

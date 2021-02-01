@@ -5,6 +5,7 @@ function Menu(){
     return(
         <div className="menu-wrapper">
             <nav className="menu">
+                <div className="menu-item"><NavLink to="/">Main</NavLink></div>
                 <div className="menu-item"><NavLink to="/aboutMe">About me</NavLink></div>
                 <div className="menu-item"><NavLink to="/experience">Experience/Skills</NavLink></div>
                 <div className="menu-item"><NavLink to="/projects">Projects</NavLink></div>

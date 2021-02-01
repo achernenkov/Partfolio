@@ -1,7 +1,11 @@
 import React from "react";
 
 function Projects(){
-    return <div>Projects</div>
+    return (
+        <div className='pageWrapper'>
+            <div className='contentWrapper'>Content</div>
+        </div>
+    )
 }
 
 export default Projects;
