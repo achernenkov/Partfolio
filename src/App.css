@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    font-family: technic, sans-serif;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro {
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    background: url('srcFile/cover.jpg') center no-repeat;
+    background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.intro:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .2);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
 }
 
-.App-link {
-  color: #61dafb;
+.intro__title {
+    margin: 0;
+
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+}
+
+.video__media {
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-wrapper{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    /*background-color: rgba(0, 0, 0, .3);*/
+}
+
+.menu{
+    display: flex;
+}
+
+.menu-item{
+    margin-top: 22px;
+    margin-left: 50px;
+    padding: 0 10px;
+
+}
+
+.menu-item:hover{
+    border-bottom: 2px solid green;
+}
+
+.menu-item a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu-item a:hover{
+    color: white;
+    font-size: 20px;
+}
+
+.bottom-text{
+    margin: 0;
+}
+
+.bottom-text:after{
+    content: ' }';
+    color: green;
+}
+
+.bottom-text:before{
+    content: '{ ';
+    color: green;
 }

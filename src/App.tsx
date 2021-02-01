@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Video from "./components/video/video";
+import MainTitle from "./components/mainTitle/mainTitle";
+import Menu from "./components/menu/menu";
+import AboutMe from "./components/sitePages/aboutMe/aboutMe";
+import Experience from "./components/sitePages/experience/experience";
+import Projects from "./components/sitePages/projects/projects";
+import Contacts from "./components/sitePages/contacts/contacts";
+import {BrowserRouter, Route} from "react-router-dom";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="intro">
+                <Route exact path='/'  render={() => <Video/>}/>
+                <Route exact path='/' render={() => <MainTitle/>}/>
+                <Menu/>
+                <Route path='/aboutMe' render={() => <AboutMe/>}/>
+                <Route path='/experience' render={() => <Experience/>}/>
+                <Route path='/projects' render={() => <Projects/>}/>
+                <Route path='/contacts' render={() => <Contacts/>}/>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
