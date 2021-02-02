@@ -14,7 +14,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 function App() {
     return (
         <BrowserRouter>
-            <div className="intro">
+            <div className='wrapperApp'>
                 <Route exact path='/'  render={() => <Video/>}/>
                 <Route exact path='/' render={() => <MainTitle/>}/>
                 <Menu/>
