@@ -48,6 +48,8 @@ function Projects({state}: ProjectsPropsType){
                                 img={card.img}
                                 title={card.title}
                                 tag={card.tag}
+                                description={card.description}
+                                link={card.link}
                             />
                         )
                     })}

@@ -1,0 +1,109 @@
+.modalWrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+}
+
+.modalBody {
+    width: 600px;
+    height: 450px;
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 50px auto 0 auto;
+    border-radius: 15px;
+    border: 2px solid #cfcfcf;
+
+}
+
+.modalHeader {
+    height: 40px;
+}
+
+.modalContent {
+    height: 410px;
+}
+
+.modalContentWrapper {
+    width: 550px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 16px;
+    opacity: 0.3;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 16px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+.cardIMG {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+    margin: 10px auto 0 auto;
+}
+
+.modalTitle {
+    text-shadow: none;
+    font-size: 25px;
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modalText {
+    width: 400px;
+    margin: 5px auto 0 auto;
+    text-shadow: none;
+    text-align: center;
+}
+
+.modalBlockLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.modalBlockLink a {
+    margin-left: 10px;
+    text-shadow: none;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.modalBlockLink a:hover {
+    text-decoration: underline;
+}
