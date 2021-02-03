@@ -8,6 +8,7 @@ import Experience from "./components/sitePages/experience/experience";
 import Projects from "./components/sitePages/projects/projects";
 import Contacts from "./components/sitePages/contacts/contacts";
 import {BrowserRouter, Route} from "react-router-dom";
+import {stateProjectsPage} from './state'
 
 
 
@@ -20,7 +21,7 @@ function App() {
                 <Menu/>
                 <Route path='/aboutMe' render={() => <AboutMe/>}/>
                 <Route path='/experience' render={() => <Experience/>}/>
-                <Route path='/projects' render={() => <Projects/>}/>
+                <Route path='/projects' render={() => <Projects state={stateProjectsPage}/>}/>
                 <Route path='/contacts' render={() => <Contacts/>}/>
             </div>
         </BrowserRouter>

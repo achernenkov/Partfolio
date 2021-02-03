@@ -127,7 +127,7 @@ body {
 
 .pageWrapper{
     width: 100%;
-    border: 1px solid red;
+    border: 1px solid #ffffff;
     background: white;
     position: relative;
     top:70px
@@ -185,6 +185,30 @@ body {
 
 .buttonProjectFilter{
     margin: 20px 10px 20px 10px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.all{
+    background: #d62828;
+}
+
+.spa{
+    background: #f8d10c;
+    color:black;
+}
+
+.layout{
+    background: #4c8cfa;
+    color: black;
+}
+
+.other{
+    background: #41f62c;
+    color: black;
 }
 
 .projectContentWrapper{
@@ -195,8 +219,6 @@ body {
 .projectCardImages{
     width: 100%;
     height:200px;
-    background: url("srcFile/testCardBgBig.jpg") center no-repeat;
-    background-size:cover;
     border-radius: 5px;
 }
 
@@ -217,6 +239,5 @@ body {
 
 .projectCardCategoryTag{
     text-align: center;
-    color: white;
     margin: 10px 0 0 0;
 }

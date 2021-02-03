@@ -1,72 +1,56 @@
-import React from "react";
+import React, {useState} from "react";
+import {StateProjectsPageType} from "../../../state";
+import ProjectCard from "./projectCard/projectCard";
 
-function Projects() {
+
+type ProjectsPropsType = {
+    state:Array<StateProjectsPageType>
+}
+
+type activeTagType = '#SPA' | '#LAYOUT' | '#OTHER' | '#All'
+
+function Projects({state}: ProjectsPropsType){
+
+    const [activeTag, setActiveTag] = useState<activeTagType>('#All')
+
+    function handlerActiveTag(activeTag: activeTagType){
+        setActiveTag(activeTag)
+    }
+
+    let filteredCard: Array<StateProjectsPageType> = state
+
+    if(activeTag === '#SPA'){
+        filteredCard = state.filter(el => el.tag === '#SPA')
+    }
+
+    if(activeTag === '#LAYOUT'){
+        filteredCard = state.filter(el => el.tag === '#LAYOUT')
+    }
+
+    if(activeTag === '#OTHER'){
+        filteredCard = state.filter(el => el.tag === '#OTHER')
+    }
+
+
     return (
         <div className='pageWrapper'>
             <div className='projectContentWrapper'>
                 <div className='projectFilter'>
-                    <button className='buttonProjectFilter'>All</button>
-                    <button className='buttonProjectFilter'>SPA</button>
-                    <button className='buttonProjectFilter'>Layout</button>
-                    <button className='buttonProjectFilter'>Other</button>
+                    <button className='buttonProjectFilter all' onClick={() => {handlerActiveTag('#All')}}>#All</button>
+                    <button className='buttonProjectFilter spa' onClick={() => {handlerActiveTag('#SPA')}}>#SPA</button>
+                    <button className='buttonProjectFilter layout' onClick={() => {handlerActiveTag('#LAYOUT')}}>#LAYOUT</button>
+                    <button className='buttonProjectFilter other' onClick={() => {handlerActiveTag('#OTHER')}}>#OTHER</button>
                 </div>
                 <div className='projectWrapper'>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
-                    <div className='projectCard'>
-                        <div className='projectCardImages'></div>
-                        <div className='projectCardDescription'>
-                            <p className='projectCardDescriptionTitle'>Title</p>
-                            <p className='projectCardCategoryTag'>#tag...</p>
-                        </div>
-                    </div>
+                    {filteredCard.map(card => {
+                        return (
+                            <ProjectCard
+                                img={card.img}
+                                title={card.title}
+                                tag={card.tag}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         </div>
